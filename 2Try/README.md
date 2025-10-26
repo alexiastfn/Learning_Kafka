@@ -1,7 +1,20 @@
 
 # Flow
 
-## 1. kafkaapp-producer (TextProducer)
+## Setup
+#### Add in `/etc/hosts` file: 127.0.0.1 kafka  
+
+```bash
+docker compose up
+```
+
+```bash
+docker-compose down --remove-orphans
+```
+
+## ------- Flow:
+
+### 1. kafkaapp-producer (TextProducer)
 `Port`: 8080
 
 `Produces to`: TEXT-DATA topic
@@ -10,7 +23,7 @@
 
 `In Kafka UI`: You see raw messages in TEXT-DATA/Messages
 
-## 2. kafkaapp-consumer (TextConsumer)
+### 2. kafkaapp-consumer (TextConsumer)
 `Port`: 8082 (assumed)
 
 `Consumes from`: TEXT-DATA topic
@@ -21,7 +34,7 @@
 
 `In Kafka UI`: You see TEXT-DATA/Consumers → TEXT_CONSUMERS
 
-## 3. kafkaapp-aggregator (TextAggregator)
+### 3. kafkaapp-aggregator (TextAggregator)
 `Port`: 8086
 
 `Consumes from`: AGGREGATE-DATA topic
